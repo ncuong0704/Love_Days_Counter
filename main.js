@@ -18,6 +18,7 @@ $(".app__images").slick({
   draggable: false,
   prevArrow: '<button class="slide-arrow prev-arrow">Quay lại</button>',
   nextArrow: '<button class="slide-arrow next-arrow">Tiếp</button>',
+  
 });
 
 $("[data-fancybox]").fancybox({

@@ -101,6 +101,9 @@ html {
 .app__images .slick-slide div img {
   height: 100%;
 }
+.app__images .slick-slide div img{
+    width: auto !important;
+}
 .app__images .slide-arrow {
   position: absolute;
   top: 50%;
