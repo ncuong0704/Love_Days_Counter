@@ -1,0 +1,106 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.app{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+}
+.app__top{
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw;
+    background-color: black;
+}
+.app__person{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.app__avatar{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.app__name{
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.app__heart{
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.app__total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.app__total strong{
+    font-size: 72px;
+    color: red;
+}
+.app__total span{
+    font-size: 32px;
+    color: white;
+    line-height: 1;
+}
+.app__body{
+    height: 70%;
+}
+.app__images,
+.app__images .slick-list,
+.app__images .slick-track,
+.app__images .slick-slide,
+.app__images .slick-slide div,
+.app__images .slick-slide div img
+{
+    height: 100%;
+}
+.app__images .slide-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    opacity: 0.4;
+    cursor: pointer;
+}
+.app__images .slide-arrow:hover{
+    opacity: 1;
+}
+.app__images .prev-arrow{
+    left: 12px;
+}
+.app__images .next-arrow{
+    right: 12px;
+}

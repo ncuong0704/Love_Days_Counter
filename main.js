@@ -1,0 +1,30 @@
+for (let i = 1; i <= 79; i++) {
+  console.log(
+    `<img data-fancybox="images" data-caption="Image ${i}" href="./images/${i}.jpg"  src="./images/${i}.jpg" alt="hình ${i}">`
+  );
+}
+
+$(".app__images").slick({
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 1,
+  centerMode: true,
+  variableWidth: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  swipeToSlide: true,
+  draggable: false,
+  prevArrow: '<button class="slide-arrow prev-arrow">Quay lại</button>',
+  nextArrow: '<button class="slide-arrow next-arrow">Tiếp</button>'
+});
+
+$("[data-fancybox]").fancybox({
+  beforeShow: function (instance, current) {
+    $(".app__images").slick("slickPause");
+  },
+  afterClose: function (instance, current) {
+    $(".app__images").slick("slickPlay");
+  },
+});
