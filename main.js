@@ -1,8 +1,8 @@
-for (let i = 1; i <= 79; i++) {
-  console.log(
-    `<img data-fancybox="images" data-caption="Image ${i}" href="./images/${i}.jpg"  src="./images/${i}.jpg" alt="hình ${i}">`
-  );
-}
+// for (let i = 1; i <= 79; i++) {
+//   console.log(
+//     `<img data-fancybox="images" data-caption="Image ${i}" href="./images/${i}.jpg"  src="./images/${i}.jpg" alt="hình ${i}">`
+//   );
+// }
 
 $(".app__images").slick({
   infinite: true,
@@ -17,7 +17,7 @@ $(".app__images").slick({
   swipeToSlide: true,
   draggable: false,
   prevArrow: '<button class="slide-arrow prev-arrow">Quay lại</button>',
-  nextArrow: '<button class="slide-arrow next-arrow">Tiếp</button>'
+  nextArrow: '<button class="slide-arrow next-arrow">Tiếp</button>',
 });
 
 $("[data-fancybox]").fancybox({
@@ -28,3 +28,9 @@ $("[data-fancybox]").fancybox({
     $(".app__images").slick("slickPlay");
   },
 });
+
+const startDate = new Date("2023-09-22");
+const currentDate = new Date();
+const timeDifference = currentDate - startDate;
+const daysDifference = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
+$(".app__total strong").text(daysDifference);
