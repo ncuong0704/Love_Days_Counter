@@ -170,6 +170,7 @@ html {
   left: calc(50% - 80px);
   transform: translateX(-50%);
   width: 60px;
+  pointer-events: none;
 }
 .app__heart--left {
   left: calc(50% + 40px);
