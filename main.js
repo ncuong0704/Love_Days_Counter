@@ -34,3 +34,23 @@ const currentDate = new Date();
 const timeDifference = currentDate - startDate;
 const daysDifference = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
 $(".app__total strong").text(daysDifference);
+
+const audio = $(".audio__music")[0];
+$(".audio__action").click(function (e) {
+  e.preventDefault();
+  $(".audio__action .fa-pause").toggleClass("active");
+  $(".audio__action .fa-play").toggleClass("active");
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+});
+
+$(".app").snowfall({ image: "./images/basic/red-heart-8118_256.gif", minSize: 15, maxSize: 42, flakeCount: 5 });
+
+if(window.innerWidth < 1024){
+    $(".app__person").each(function(inx, cur){
+        $(cur).appendTo(".app__mobile");
+    })
+}

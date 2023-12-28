@@ -23,9 +23,16 @@ html {
   height: 30%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: end;
   background-color: #f7becd;
   position: relative;
+  flex-wrap: wrap;
+}
+.app__mobile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .app__person {
   text-align: center;
@@ -124,42 +131,108 @@ html {
 .app__images img:hover {
   filter: brightness(110%);
 }
-.app__sticker{
-    height: 100%;
-    width: 80px;
-    background-size: contain;
-    background-position: bottom;
-    pointer-events: none;
+.app__sticker {
+  width: 80px;
+  background-size: contain;
+  background-position: bottom;
+  pointer-events: none;
 }
-.app__sticker--left{
-    transform: scaleX(-1);
+.app__sticker--left {
+  transform: scaleX(-1);
 }
-.app__run{
-    position: absolute;
-    bottom: 0;
-    left: -80px;
-    width: 80px;
-    height: 80px;
-    animation: run 20s linear 3s infinite;
-    z-index: 99;
-    pointer-events: none;
+.app__run {
+  position: absolute;
+  bottom: 0;
+  left: -80px;
+  width: 80px;
+  height: 80px;
+  animation: run 20s linear 3s infinite;
+  z-index: 99;
+  pointer-events: none;
 }
 
 @keyframes run {
-    0%{
-        left: -80px;
-    }
-    100%{
-        left: 100%;
-    }
+  0% {
+    left: -80px;
+  }
+  100% {
+    left: 100%;
+  }
 }
-.app__heart{
-    position: absolute;
-    left: calc(50% - 80px);
-    transform: translateX(-50%);
-    width: 60px;
+.app__heart {
+  position: absolute;
+  left: calc(50% - 80px);
+  transform: translateX(-50%);
+  width: 60px;
 }
-.app__heart--left{
-    left: calc(50% + 40px);
-    transform: scaleX(-1);
+.app__heart--left {
+  left: calc(50% + 40px);
+  transform: scaleX(-1);
+}
+
+.audio {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 999;
+}
+.audio__music {
+}
+.audio__action {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #fc016b;
+  color: #fc016b;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.audio__action:hover {
+  transform: scale(1.1);
+}
+.audio__action i {
+  display: none;
+}
+.audio__action .active {
+  display: block;
+}
+@media (max-width: 1024px) {
+  .app__top {
+    height: 40%;
+    align-items: center;
+  }
+  .app__body {
+    height: 60%;
+  }
+}
+@media (max-width: 739px) {
+  .app__top {
+  }
+  .app__body {
+  }
+  .app__avatar {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+  .app__total {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+  }
+  .app__total strong {
+    font-size: 42px;
+  }
+  .app__total span {
+    font-size: 18px;
+  }
+  .app__name {
+    font-size: 18px;
+  }
 }

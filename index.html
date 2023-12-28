@@ -6,11 +6,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css?v=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
     <div class="background">
+      <div class="audio">
+        <audio class="audio__music" src="./music/music.mp3" loop></audio>
+        <div class="audio__action">
+          <i class="fa-solid fa-pause"></i>
+          <i class="fa-solid fa-play active"></i>
+        </div>
+      </div>
       <div class="app">
         <div class="app__top">
           <div class="app__person">
@@ -64,6 +71,7 @@
             scrolling="no"
             class="app__heart app__heart--left"
           ></iframe>
+          <div class="app__mobile"></div>
         </div>
         <div class="app__body">
           <iframe
@@ -641,6 +649,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js?v=1.0"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="./snow.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
