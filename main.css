@@ -319,14 +319,9 @@ html {
   }
   .app__body {
   }
-  .app__dance{
-    scale: 0.6;
-    left: -8vw;
-    bottom: -7vw;
-  }
-  .app__dance--right{
-    left: unset;
-    right: -8vw;
+  .app__dance iframe{
+    width: 60px !important;
+    height: 60px !important;
   }
 }
 @media (max-width: 739px) {
