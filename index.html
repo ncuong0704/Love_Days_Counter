@@ -12,10 +12,19 @@
   <body>
     <div class="background">
       <div class="audio">
-        <audio class="audio__music" src="./music/music.mp3" loop></audio>
+        <div class="audio__info">
+          <div class="audio__name">Bật nhạc</div>
+          <div class="audio__time"></div>
+        </div>
+        <audio class="audio__music" src="./music/music.mp3"></audio>
         <div class="audio__action">
-          <i class="fa-solid fa-pause"></i>
-          <i class="fa-solid fa-play active"></i>
+          <div class="btn btn__play">
+            <i class="fa-solid fa-pause"></i>
+            <i class="fa-solid fa-play active"></i>
+          </div>
+          <div class="btn btn__change">
+            <i class="fa-solid fa-forward"></i>
+          </div>
         </div>
       </div>
       <div class="app">
@@ -24,8 +33,8 @@
             <div
               class="app__avatar"
               data-fancybox="avatar"
-              data-caption="Anh Bé"
-              href="./images/80.jpg"
+              data-caption="Anh Bé ( 07/04/1995 - Bạch Dương)"
+              href="./images/avatar/2.jpg"
               class="item"
               style="background-image: url(./images/avatar/2.jpg)"
             ></div>
@@ -39,7 +48,25 @@
             allow="autoplay"
             class="app__sticker app__sticker--left"
           ></iframe>
-          <div class="app__total"><strong>100</strong> <span>Ngày</span></div>
+          <div class="app__total">
+            <strong>100</strong> <span>Ngày</span>
+            <iframe
+              src="https://giphy.com/embed/1oPXuHfr7oA5MsesEl"
+              frameborder="0"
+              allowfullscreen
+              scrolling="no"
+              allow="autoplay"
+              class="app__heart"
+            ></iframe>
+            <iframe
+              src="https://giphy.com/embed/1oPXuHfr7oA5MsesEl"
+              frameborder="0"
+              allowfullscreen
+              scrolling="no"
+              allow="autoplay"
+              class="app__heart app__heart--left"
+            ></iframe>
+          </div>
           <iframe
             src="https://giphy.com/embed/sg32LhHk9RVLi"
             frameborder="0"
@@ -50,31 +77,16 @@
           ></iframe>
           <div class="app__person">
             <div
-              class="app__avatar"
+              class="app__avatar "
               data-fancybox="avatar"
-              data-caption="Bé"
-              href="./images/71.jpg"
+              data-caption="Em Bé ( 06/12/1999 - Nhân Mã)"
+              href="./images/avatar/1.jpg"
               class="item"
               style="background-image: url(./images/avatar/1.jpg)"
             ></div>
             <div class="app__name">Em Bé</div>
           </div>
-          <iframe
-            src="https://giphy.com/embed/1oPXuHfr7oA5MsesEl"
-            frameborder="0"
-            allowfullscreen
-            scrolling="no"
-            allow="autoplay"
-            class="app__heart"
-          ></iframe>
-          <iframe
-            src="https://giphy.com/embed/1oPXuHfr7oA5MsesEl"
-            frameborder="0"
-            allowfullscreen
-            scrolling="no"
-            allow="autoplay"
-            class="app__heart app__heart--left"
-          ></iframe>
+
           <div class="app__mobile"></div>
         </div>
         <div class="app__body">
@@ -86,8 +98,7 @@
             allow="autoplay"
             class="app__run"
           ></iframe>
-          <div class="app__images">
-          </div>
+          <div class="app__images"></div>
         </div>
       </div>
     </div>
