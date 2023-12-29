@@ -156,15 +156,11 @@ $(".btn__play").click(function (e) {
   $(".audio__name").text(nameMusic);
   if (audio.paused) {
     audio.play();
-    if (window.innerWidth > 1023) {
-      $(".app__dance").addClass("active");
-    }
+    $(".app__dance").addClass("active");
     audio.addEventListener("ended", endedHandler);
   } else {
     audio.pause();
-    if (window.innerWidth > 1023) {
-      $(".app__dance").removeClass("active");
-    }
+    $(".app__dance").removeClass("active");
   }
 });
 function changeMusic() {
@@ -175,9 +171,7 @@ function changeMusic() {
   $(".audio__name").text(nextMusic.name);
   nameMusic = nextMusic.name;
   audio.play();
-  if (window.innerWidth > 1023) {
-    $(".app__dance").addClass("active");
-  }
+  $(".app__dance").addClass("active");
   audio.addEventListener("ended", endedHandler);
 }
 
