@@ -189,7 +189,7 @@ html {
   align-items: center;
 }
 .audio__name{
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
   font-style: italic;
@@ -232,8 +232,20 @@ html {
 }
 .btn__change {
 }
-
-
+.app__dance{
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  z-index: 9;
+  display: none;
+}
+.app__dance--right{
+  left: unset;
+  right: 20px;
+}
+.app__dance.active{
+  display: block;
+}
 @media (max-width: 1024px) {
   .app__top {
   }

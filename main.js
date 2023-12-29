@@ -35,6 +35,14 @@ for (let i = 1; i <= imagesToLoad; i++) {
         prevArrow: '<button class="slide-arrow prev-arrow">Quay lại</button>',
         nextArrow: '<button class="slide-arrow next-arrow">Tiếp</button>',
       });
+      $("[data-fancybox]").fancybox({
+        beforeShow: function (instance, current) {
+          $(".app__images").slick("slickPause");
+        },
+        afterClose: function (instance, current) {
+          $(".app__images").slick("slickPlay");
+        },
+      });
     }
   });
 }
@@ -48,21 +56,14 @@ function checkImageExistence(imageNumber, callback) {
   };
   img.src = `./images/slider-min/${imageNumber}-min.jpg`;
 }
-$("[data-fancybox]").fancybox({
-  beforeShow: function (instance, current) {
-    $(".app__images").slick("slickPause");
-  },
-  afterClose: function (instance, current) {
-    $(".app__images").slick("slickPlay");
-  },
-});
+
 
 const startDate = new Date("2023-09-22");
 const currentDate = new Date();
 const timeDifference = currentDate - startDate;
 const daysDifference = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
 $(".app__total strong").text(daysDifference);
-$(".app").snowfall({ image: "./images/basic/red-heart-8118_256.gif", minSize: 15, maxSize: 42, flakeCount: 5 });
+$(".app").snowfall({ image: "./images/basic/red-heart-8118_256.gif", minSize: 15, maxSize: 42, flakeCount: 10 });
 
 if (window.innerWidth < 1024) {
   // mobile
@@ -126,8 +127,8 @@ const musicList = {
     name: "quá lâu",
   },
   12: {
-    src: "./music/thiendang.mp3",
-    name: "thiên đàng",
+    src: "./music/chimotdemnuathoi.mp3",
+    name: "CHỈ MỘT ĐÊM NỮA THÔI",
   },
   13: {
     src: "./music/tinhyeudieuky.mp3",
@@ -140,7 +141,7 @@ const musicList = {
   15: {
     src: "./music/yeuemratnhieu.mp3",
     name: "Yêu em rất nhiều",
-  },
+  }
 };
 function getRandomMusic() {
   var newRandomNumber;
@@ -150,20 +151,26 @@ function getRandomMusic() {
   currentRandomNumber = newRandomNumber;
   return musicList[currentRandomNumber];
 }
-var currentRandomNumber; 
+var currentRandomNumber;
 const audio = $(".audio__music")[0];
 const musicRandom = getRandomMusic();
 $(audio).attr("src", musicRandom.src);
-let nameMusic = musicRandom.name
+let nameMusic = musicRandom.name;
 $(".btn__play").click(function (e) {
   e.preventDefault();
   $(".btn__play .fa-pause, .btn__play .fa-play").toggleClass("active");
   $(".audio__name").text(nameMusic);
   if (audio.paused) {
     audio.play();
+    if(window.innerWidth > 1023){
+      $(".app__dance").addClass("active");
+    }
     audio.addEventListener("ended", endedHandler);
   } else {
     audio.pause();
+    if(window.innerWidth > 1023){
+      $(".app__dance").removeClass("active");
+    }
   }
 });
 function changeMusic() {
@@ -174,6 +181,9 @@ function changeMusic() {
   $(".audio__name").text(nextMusic.name);
   nameMusic = nextMusic.name;
   audio.play();
+  if(window.innerWidth > 1023){
+    $(".app__dance").addClass("active");
+  }
   audio.addEventListener("ended", endedHandler);
 }
 
@@ -182,7 +192,7 @@ $(".btn__change").click(function (e) {
   changeMusic();
 });
 
-audio.addEventListener("timeupdate", function() {
+audio.addEventListener("timeupdate", function () {
   // Cập nhật thời gian hiện tại của bài hát
   var currentTime = audio.currentTime;
   $(".audio__time")[0].textContent = formatTime(currentTime);
@@ -197,3 +207,4 @@ function endedHandler() {
   console.log("đã hết bài");
   changeMusic();
 }
+
