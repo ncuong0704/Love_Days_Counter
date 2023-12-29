@@ -238,6 +238,7 @@ html {
   left: 20px;
   z-index: 9;
   display: none;
+  pointer-events: none;
 }
 .app__dance--right{
   left: unset;
