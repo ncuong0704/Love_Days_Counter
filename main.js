@@ -57,12 +57,6 @@ function checkImageExistence(imageNumber, callback) {
   img.src = `./images/slider-min/${imageNumber}-min.jpg`;
 }
 
-
-const startDate = new Date("2023-09-22");
-const currentDate = new Date();
-const timeDifference = currentDate - startDate;
-const daysDifference = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
-$(".app__total strong").text(daysDifference);
 $(".app").snowfall({ image: "./images/basic/red-heart-8118_256.gif", minSize: 15, maxSize: 42, flakeCount: 10 });
 
 if (window.innerWidth < 1024) {
@@ -141,7 +135,7 @@ const musicList = {
   15: {
     src: "./music/yeuemratnhieu.mp3",
     name: "Yêu em rất nhiều",
-  }
+  },
 };
 function getRandomMusic() {
   var newRandomNumber;
@@ -162,13 +156,13 @@ $(".btn__play").click(function (e) {
   $(".audio__name").text(nameMusic);
   if (audio.paused) {
     audio.play();
-    if(window.innerWidth > 1023){
+    if (window.innerWidth > 1023) {
       $(".app__dance").addClass("active");
     }
     audio.addEventListener("ended", endedHandler);
   } else {
     audio.pause();
-    if(window.innerWidth > 1023){
+    if (window.innerWidth > 1023) {
       $(".app__dance").removeClass("active");
     }
   }
@@ -181,7 +175,7 @@ function changeMusic() {
   $(".audio__name").text(nextMusic.name);
   nameMusic = nextMusic.name;
   audio.play();
-  if(window.innerWidth > 1023){
+  if (window.innerWidth > 1023) {
     $(".app__dance").addClass("active");
   }
   audio.addEventListener("ended", endedHandler);
@@ -204,7 +198,32 @@ function formatTime(time) {
   return minutes + ":" + seconds;
 }
 function endedHandler() {
-  console.log("đã hết bài");
   changeMusic();
 }
 
+// sự kiện
+
+const startDate = new Date("2023-09-22");
+const currentDate = new Date();
+const currentDay = currentDate.getDate();
+const currentMonth = currentDate.getMonth() + 1;
+const timeDifference = currentDate - startDate;
+const daysDifference = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
+$(".app__total strong").text(daysDifference);
+
+if (daysDifference % 100 === 0) {
+  $(".modal").addClass("active");
+  $(".popup").addClass("active");
+  $(".popup__content strong").text(`${daysDifference} ngày`);
+}
+if (currentDay == 22 && currentMonth == 9) {
+  $(".modal").addClass("active");
+  $(".popup").addClass("active");
+  const year = Math.floor(daysDifference / 365);
+  $(".popup__content strong").text(`${year} năm`);
+}
+$(".popup__action").click(function (e) {
+  e.preventDefault();
+  $(".modal").removeClass("active");
+  $(".popup").removeClass("active");
+});
