@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css?v=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="modal"></div>
     <div class="popup">
-      <div class="popup__content">Chúc mừng anh và bé được <br /><strong>100 ngày</strong> bên nhau.</div>
+      <div class="popup__content"></div>
       <div class="popup__action">Xác nhận</div>
     </div>
     <div class="background">
@@ -150,12 +151,22 @@
           </div>
           <div class="app__images"></div>
         </div>
+        <div class="stage-container remove">
+          <div class="canvas-container">
+            <canvas id="trails-canvas"></canvas>
+            <canvas id="main-canvas"></canvas>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js?v=1.0"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="./snow.js"></script>
+    <script src="fscreen.js"></script>
+    <script src="Stage.js"></script>
+    <script src="MyMath.js"></script>
+    <script src="script.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>

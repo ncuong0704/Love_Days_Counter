@@ -174,7 +174,16 @@ function changeMusic() {
   $(".app__dance").addClass("active");
   audio.addEventListener("ended", endedHandler);
 }
-
+function newYearMusic() {
+  $(audio).attr("src", "./music/hpny.mp3");
+  $(".btn__play .fa-pause").addClass("active");
+  $(".btn__play .fa-play").removeClass("active");
+  $(".audio__name").text("ABBA - Happy New Year");
+  nameMusic = "ABBA - Happy New Year";
+  audio.play();
+  $(".app__dance").addClass("active");
+  audio.addEventListener("ended", endedHandler);
+}
 $(".btn__change").click(function (e) {
   e.preventDefault();
   changeMusic();
@@ -208,17 +217,37 @@ $(".app__total strong").text(daysDifference);
 if (daysDifference % 100 === 0) {
   $(".modal").addClass("active");
   $(".popup").addClass("active");
-  $(".popup__content strong").text(`${daysDifference} ngày`);
+  $(".popup__content").html(`Chúc mừng anh và bé được <br /><strong>${daysDifference} ngày</strong> bên nhau.`);
+  $(".popup__action").click(function (e) {
+    e.preventDefault();
+    $(".modal").removeClass("active");
+    $(".popup").removeClass("active");
+    changeMusic()
+  });
 }
 if (currentDay == 22 && currentMonth == 9) {
   $(".modal").addClass("active");
   $(".popup").addClass("active");
   const year = Math.floor(daysDifference / 365);
-  $(".popup__content strong").text(`${year} năm`);
+  $(".popup__content").html(`Chúc mừng anh và bé được <br /><strong>${year} năm</strong> bên nhau.`);
+  $(".popup__action").click(function (e) {
+    e.preventDefault();
+    $(".modal").removeClass("active");
+    $(".popup").removeClass("active");
+    changeMusic()
+  });
 }
-$(".popup__action").click(function (e) {
-  e.preventDefault();
-  $(".modal").removeClass("active");
-  $(".popup").removeClass("active");
-  changeMusic()
-});
+if (currentDay == 30 && currentMonth == 12) {
+  $(".modal").addClass("active");
+  $(".popup").addClass("active");
+  $(".popup__content").html(`Chúc mừng năm mới <strong> ${currentDate.getFullYear()} </strong>, mãi mãi bên nhau em nhé <strong><i class="fa-solid fa-heart"></i></strong>`);
+  $(".popup__action").click(function (e) {
+    e.preventDefault();
+    $(".modal").removeClass("active");
+    $(".popup").removeClass("active");
+    newYearMusic()
+    init()
+  });
+}
+
+
