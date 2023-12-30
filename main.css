@@ -270,7 +270,8 @@ html {
   background-color: white;
   z-index: 9999;
   border-radius: 24px;
-  max-width: 560px;
+  max-width: 100%;
+  width: 560px;
   border: 1px solid #fc016b;
   opacity: 0;
   visibility: hidden;
