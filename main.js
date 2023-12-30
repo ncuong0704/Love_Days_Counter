@@ -130,7 +130,7 @@ function endedHandler() {
 
 // sự kiện
 
-const startDate = new Date("2023-09-22");
+const startDate = new Date("2023-09-22 00:00:00");
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
