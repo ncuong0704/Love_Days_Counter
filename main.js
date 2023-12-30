@@ -137,7 +137,7 @@ const currentMonth = currentDate.getMonth() + 1;
 const timeDifference = currentDate - startDate;
 const daysDifference = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
 $(".app__total strong").text(daysDifference);
-
+console.log(daysDifference)
 if (daysDifference % 100 === 0) {
   $(".modal").addClass("active");
   $(".popup").addClass("active");
