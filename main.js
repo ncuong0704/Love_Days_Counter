@@ -223,6 +223,7 @@ if (daysDifference % 100 === 0) {
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
     changeMusic()
+    init()
   });
 }
 if (currentDay == 22 && currentMonth == 9) {
@@ -235,9 +236,10 @@ if (currentDay == 22 && currentMonth == 9) {
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
     changeMusic()
+    init()
   });
 }
-if (currentDay == 30 && currentMonth == 12) {
+if (currentDay == 1 && currentMonth == 1) {
   $(".modal").addClass("active");
   $(".popup").addClass("active");
   $(".popup__content").html(`Chúc mừng năm mới <strong> ${currentDate.getFullYear()} </strong>, mãi mãi bên nhau em nhé <strong><i class="fa-solid fa-heart"></i></strong>`);
