@@ -157,8 +157,6 @@ if (daysDifference % 100 === 0) {
           return Promise.reject(reason);
         });
       }, 0);
-    $(".btn__play")[0].click()
-    $(".btn__play")[0].click()
   });
 }
 if (currentDay == 22 && currentMonth == 9) {
