@@ -150,13 +150,7 @@ if (daysDifference % 100 === 0) {
     $(".stage-container").addClass("active");
     console.log(1)
     // CodePen profile header doesn't need audio, just initialize.
-    if (IS_HEADER) {
-      console.log(123)
-      init();
-    } else {
-           console.log(456)
-      // Allow status to render, then preload assets and start app.
-      setTimeout(() => {
+     setTimeout(() => {
         soundManager.preload().then(init, (reason) => {
           // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
           init();
@@ -164,7 +158,6 @@ if (daysDifference % 100 === 0) {
           return Promise.reject(reason);
         });
       }, 0);
-    }
   });
 }
 if (currentDay == 22 && currentMonth == 9) {
@@ -179,11 +172,7 @@ if (currentDay == 22 && currentMonth == 9) {
     changeMusic();
     $(".stage-container").addClass("active");
     // CodePen profile header doesn't need audio, just initialize.
-    if (IS_HEADER) {
-      init();
-    } else {
-      // Allow status to render, then preload assets and start app.
-      setTimeout(() => {
+     setTimeout(() => {
         soundManager.preload().then(init, (reason) => {
           // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
           init();
@@ -191,7 +180,6 @@ if (currentDay == 22 && currentMonth == 9) {
           return Promise.reject(reason);
         });
       }, 0);
-    }
   });
 }
 if (currentDay == 1 && currentMonth == 1) {
@@ -207,11 +195,7 @@ if (currentDay == 1 && currentMonth == 1) {
     newYearMusic()
     $(".stage-container").addClass("active");
     // CodePen profile header doesn't need audio, just initialize.
-    if (IS_HEADER) {
-      init();
-    } else {
-      // Allow status to render, then preload assets and start app.
-      setTimeout(() => {
+     setTimeout(() => {
         soundManager.preload().then(init, (reason) => {
           // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
           init();
@@ -219,7 +203,6 @@ if (currentDay == 1 && currentMonth == 1) {
           return Promise.reject(reason);
         });
       }, 0);
-    }
   });
 }
 
