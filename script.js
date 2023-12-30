@@ -216,10 +216,7 @@ const store = {
 };
 
 
-if (!IS_HEADER) {
-	store.load();
-}
-
+store.load();
 // Actions
 // ---------
 
