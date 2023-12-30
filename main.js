@@ -148,6 +148,7 @@ if (daysDifference % 100 === 0) {
     $(".popup").removeClass("active");
     changeMusic();
     $(".stage-container").addClass("active");
+    console.log(1)
     // CodePen profile header doesn't need audio, just initialize.
     if (IS_HEADER) {
       console.log(123)
