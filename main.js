@@ -147,6 +147,7 @@ if (daysDifference % 100 === 0) {
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
     changeMusic();
+    $(".stage-container").addClass("active");
     // CodePen profile header doesn't need audio, just initialize.
     if (IS_HEADER) {
       init();
@@ -173,6 +174,7 @@ if (currentDay == 22 && currentMonth == 9) {
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
     changeMusic();
+    $(".stage-container").addClass("active");
     // CodePen profile header doesn't need audio, just initialize.
     if (IS_HEADER) {
       init();
@@ -200,6 +202,7 @@ if (currentDay == 1 && currentMonth == 1) {
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
     newYearMusic()
+    $(".stage-container").addClass("active");
     // CodePen profile header doesn't need audio, just initialize.
     if (IS_HEADER) {
       init();

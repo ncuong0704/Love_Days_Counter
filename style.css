@@ -7,6 +7,10 @@
   bottom: 0;
   background-color: transparent !important;
   pointer-events: none;
+  display: none;
+}
+.stage-container.active{
+  display: block;
 }
 @media (max-width: 840px) {
   .stage-container {
