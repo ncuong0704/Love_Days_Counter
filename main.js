@@ -189,7 +189,7 @@ if (currentDay == 22 && currentMonth == 9) {
     }
   });
 }
-if (currentDay == 30 && currentMonth == 12) {
+if (currentDay == 1 && currentMonth == 1) {
   $(".modal").addClass("active");
   $(".popup").addClass("active");
   $(".popup__content").html(
