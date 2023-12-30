@@ -146,8 +146,21 @@ if (daysDifference % 100 === 0) {
     e.preventDefault();
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
-    changeMusic()
-    init()
+    changeMusic();
+    // CodePen profile header doesn't need audio, just initialize.
+    if (IS_HEADER) {
+      init();
+    } else {
+      // Allow status to render, then preload assets and start app.
+      setTimeout(() => {
+        soundManager.preload().then(init, (reason) => {
+          // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
+          init();
+          // setLoadingStatus('Error Loading Audio');
+          return Promise.reject(reason);
+        });
+      }, 0);
+    }
   });
 }
 if (currentDay == 22 && currentMonth == 9) {
@@ -159,20 +172,48 @@ if (currentDay == 22 && currentMonth == 9) {
     e.preventDefault();
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
-    changeMusic()
-    init()
+    changeMusic();
+    // CodePen profile header doesn't need audio, just initialize.
+    if (IS_HEADER) {
+      init();
+    } else {
+      // Allow status to render, then preload assets and start app.
+      setTimeout(() => {
+        soundManager.preload().then(init, (reason) => {
+          // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
+          init();
+          // setLoadingStatus('Error Loading Audio');
+          return Promise.reject(reason);
+        });
+      }, 0);
+    }
   });
 }
-if (currentDay == 1 && currentMonth == 1) {
+if (currentDay == 30 && currentMonth == 12) {
   $(".modal").addClass("active");
   $(".popup").addClass("active");
-  $(".popup__content").html(`Chúc mừng năm mới <strong> ${currentDate.getFullYear()} </strong>, mãi mãi bên nhau em nhé <strong><i class="fa-solid fa-heart"></i></strong>`);
+  $(".popup__content").html(
+    `Chúc mừng năm mới <strong> ${currentDate.getFullYear()} </strong>, mãi mãi bên nhau em nhé <strong><i class="fa-solid fa-heart"></i></strong>`
+  );
   $(".popup__action").click(function (e) {
     e.preventDefault();
     $(".modal").removeClass("active");
     $(".popup").removeClass("active");
     newYearMusic()
-    init()
+    // CodePen profile header doesn't need audio, just initialize.
+    if (IS_HEADER) {
+      init();
+    } else {
+      // Allow status to render, then preload assets and start app.
+      setTimeout(() => {
+        soundManager.preload().then(init, (reason) => {
+          // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
+          init();
+          // setLoadingStatus('Error Loading Audio');
+          return Promise.reject(reason);
+        });
+      }, 0);
+    }
   });
 }
 
@@ -251,7 +292,3 @@ const heightTop = $(".app__top").height() + 40;
 console.log(heightApp);
 console.log(heightTop);
 $(".app__body").height(`${heightApp - heightTop}px`);
-
-
-
-
