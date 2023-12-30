@@ -151,6 +151,7 @@ if (daysDifference % 100 === 0) {
     // CodePen profile header doesn't need audio, just initialize.
     if (IS_HEADER) {
       init();
+      console.log(123)
     } else {
       // Allow status to render, then preload assets and start app.
       setTimeout(() => {
@@ -158,6 +159,7 @@ if (daysDifference % 100 === 0) {
           // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
           init();
           // setLoadingStatus('Error Loading Audio');
+           console.log(456)
           return Promise.reject(reason);
         });
       }, 0);
