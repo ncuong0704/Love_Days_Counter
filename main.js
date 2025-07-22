@@ -206,7 +206,7 @@ if (currentDay == 1 && currentMonth == 1) {
 }
 
 var htmlImages = "";
-var imagesToLoad = 48; // Số lượng ảnh cần tải
+var imagesToLoad = 54; // Số lượng ảnh cần tải
 
 for (let i = 1; i <= imagesToLoad; i++) {
   // Kiểm tra ảnh có tồn tại trước khi chèn vào trang
